@@ -111,7 +111,7 @@ const ListFooterComponent = observer(function ListFooterComponent() {
                 <Text style={styles.totalText}>Итого</Text>
                 <Text style={styles.totalSum}>{totalSum}</Text>
             </View>
-            <View style={{ marginHorizontal: 32 }}>
+            <View style={styles.buttonContainer}>
                 <Button
                     mode="contained"
                     buttonColor="#EB786E"
@@ -223,6 +223,10 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: 700,
         color: '#404040',
+    },
+    buttonContainer: {
+        marginHorizontal: 32,
+        marginBottom: 32,
     },
     buttonTitleContainer: {
         height: 40,

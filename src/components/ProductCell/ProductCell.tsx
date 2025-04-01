@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     cell: {
         flexDirection: 'column',
         backgroundColor: '#FFFFFF',
-        padding: 8,
+        padding: 16,
     },
     image: {
         aspectRatio: 1,

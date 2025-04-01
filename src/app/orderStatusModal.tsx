@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderBottomLeftRadius: 16,
         borderBottomRightRadius: 16,
+        marginBottom: 16,
     },
     optionContainer: {
         padding: 16,
