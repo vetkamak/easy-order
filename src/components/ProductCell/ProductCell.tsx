@@ -53,22 +53,19 @@ export const ProductCell = observer(function ProductCell({ product, amountInCart
             </View>
 
             <View style={[styles.priceAmountContainer]}>
-                {amountInCart ? (
-                    <IconButton
-                        icon="minus"
-                        iconColor="#FFFFFF"
-                        size={16}
-                        disabled={isRemoveDisabled}
-                        onPress={() => removeFromCart(product)}
-                    />
-                ) : null}
+                <IconButton
+                    icon="minus"
+                    iconColor="#FFFFFF"
+                    size={16}
+                    disabled={isRemoveDisabled}
+                    onPress={() => removeFromCart(product)}
+                />
                 <Text
                     numberOfLines={1}
                     style={styles.priceAmountTitle}
                 >
                     {priceAmountTitle}
                 </Text>
-
                 <IconButton
                     icon="plus"
                     iconColor="#FFFFFF"
