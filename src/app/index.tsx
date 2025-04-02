@@ -48,7 +48,7 @@ const ProductFeed = observer(function Index() {
                 <Appbar.Header mode="small" statusBarHeight={0} style={styles.appbar}>
                     <Appbar.Content
                         title={(
-                            <ActivityIndicator color="#EB786E" size="small" />
+                            <ActivityIndicator color="#EC8476" size="small" />
                         )}
                     />
                 </Appbar.Header>
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
     },
     fabOrderCart: {
-        backgroundColor: '#EB786E',
+        backgroundColor: '#EC8476',
         bottom: 40,
         right: 16,
         position: 'absolute',

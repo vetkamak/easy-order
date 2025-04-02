@@ -22,7 +22,7 @@ const CardCell = observer(function CardCell(card: Card) {
             <RadioButton
                 value={card.number}
                 status={card.isSelected ? 'checked' : 'unchecked'}
-                color="#EB786E"
+                color="#EC8476"
                 uncheckedColor="#A5A5A5"
                 onPress={onSelect}
             />
@@ -58,7 +58,7 @@ const CardSelect = observer(function CardsSelect() {
                         <Link href={'../'} asChild>
                             <Button
                                 mode="contained"
-                                buttonColor="#EB786E"
+                                buttonColor="#EC8476"
                             >
                                 <Text style={styles.buttonTitle}>
                                     Готово

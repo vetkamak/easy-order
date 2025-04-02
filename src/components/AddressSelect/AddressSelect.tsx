@@ -34,7 +34,7 @@ export const AddressSelect = observer(function AddressSelect({ visible, onDismis
                         <View style={styles.buttonContainer}>
                             <Button
                                 mode="contained"
-                                buttonColor="#EB786E"
+                                buttonColor="#EC8476"
                                 onPress={onDismiss}
                             >
                                 <Text style={styles.buttonTitle}>

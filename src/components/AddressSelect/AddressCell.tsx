@@ -20,7 +20,7 @@ export const AddressCell = observer(function AddressCell(address: Address) {
             <RadioButton
                 value={`${address.city}, ${address.address}`}
                 status={address.isSelected ? 'checked' : 'unchecked'}
-                color="#EB786E"
+                color="#EC8476"
                 uncheckedColor="#A5A5A5"
                 onPress={onSelect}
             />

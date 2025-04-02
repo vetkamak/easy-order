@@ -43,7 +43,7 @@ const ListHeaderComponent = observer(function ListHeaderComponent() {
                 <View style={styles.rowSpaceBetween}>
                     <Text style={styles.optionTitle}>Оставить у двери</Text>
                     <Switch
-                        color="#EB786E"
+                        color="#EC8476"
                         value={leaveAtTheDoor}
                         onValueChange={toggleLeaveAtTheDoor}
                     />
@@ -67,7 +67,7 @@ const ListFooterComponent = observer(function ListFooterComponent() {
             return (
                 <View style={styles.buttonTitleContainer}>
                     {isSendingOrder ? (
-                        <ActivityIndicator color="#EB786E" size="small" />
+                        <ActivityIndicator color="#EC8476" size="small" />
                     ) : (
                         <Text style={styles.buttonTitle}>
                             Оплатить
@@ -114,7 +114,7 @@ const ListFooterComponent = observer(function ListFooterComponent() {
             <View style={styles.buttonContainer}>
                 <Button
                     mode="contained"
-                    buttonColor="#EB786E"
+                    buttonColor="#EC8476"
                     disabled={!isOrderValid || isSendingOrder}
                     onPress={onSendOrder}
                 >
@@ -164,7 +164,7 @@ const OrderCart = observer(function OrderCart() {
                 <Dialog.Actions>
                     <Button
                         mode="contained"
-                        buttonColor="#EB786E"
+                        buttonColor="#EC8476"
                         onPress={() => setErrorVisible(false)}
                     >
                         <View style={styles.errorDialogButtonTitleContainer}>

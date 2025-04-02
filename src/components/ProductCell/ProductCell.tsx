@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 16,
-        backgroundColor: '#EB786E',
+        backgroundColor: '#EC8476',
     },
     priceAmountTitle: {
         fontSize: 16,

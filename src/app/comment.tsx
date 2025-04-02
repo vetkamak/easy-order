@@ -39,8 +39,8 @@ const OrderComment = observer(function OrderComment() {
                 style={{ height: 200 }}
                 contentStyle={{ backgroundColor: '#F7F7F7' }}
                 underlineStyle={{ borderRadius: 0, borderColor: '#F7F7F7' }}
-                selectionColor="#EB786E"
-                cursorColor="#EB786E"
+                selectionColor="#EC8476"
+                cursorColor="#EC8476"
                 underlineColor="transparent"
                 activeUnderlineColor="transparent"
                 textColor="#5A5A5A"
@@ -50,7 +50,7 @@ const OrderComment = observer(function OrderComment() {
                 <Link href={'../'} asChild>
                     <Button
                         mode="contained"
-                        buttonColor="#EB786E"
+                        buttonColor="#EC8476"
                         onPress={() => setOrderComment(comment)}
                     >
                         <Text style={styles.buttonTitle}>
