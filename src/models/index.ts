@@ -38,3 +38,9 @@ export type Order = {
     id: string,
     data: OrderData,
 }
+
+export type AnalyticsData = {
+    comment: string;
+    leaveAtTheDoor: boolean;
+    products: CartItem[];
+}

@@ -1,11 +1,11 @@
-import { action, computed, makeObservable, observable } from 'mobx';
+import { action, computed, makeObservable, observable, reaction } from 'mobx';
 import { router } from 'expo-router';
+
+import * as api from '@/src/api';
 
 import { userService } from '@/src/services/UserService';
 
 import { MIN_ORDER_SUM } from '@/src/constants';
-
-import * as api from '@/src/api';
 
 import type { Product, CartItem, Order } from '@/src/models';
 
@@ -47,7 +47,16 @@ export class OrderService {
             createdOrderAddress: computed,
             createdOrderComment: computed,
             createdOrderProducts: computed,
+            analyticsData: computed,
         });
+
+        reaction(
+            () => this.analyticsData,
+            async (analyticsData) => {
+                await api.sendAnalytics(analyticsData);
+            },
+            { name: 'Send analytics reaction'},
+        );
     }
 
     // Setters
@@ -205,6 +214,16 @@ export class OrderService {
         }
 
         return this.createdOrder.data.orderItems;
+    }
+
+    get analyticsData() {
+        const { orderComment, leaveAtTheDoor, cartItemsList } = this;
+
+        return {
+            comment: orderComment,
+            leaveAtTheDoor,
+            products: cartItemsList,
+        };
     }
 
     // Utils

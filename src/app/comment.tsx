@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Appbar, TextInput, Button } from 'react-native-paper';
@@ -9,6 +10,8 @@ import { orderService } from '@/src/services/OrderService';
 
 const OrderComment = observer(function OrderComment() {
     const { orderComment, setOrderComment } = orderService;
+
+    const [comment, setComment] = useState<string>(orderComment);
 
     return (
         <SafeAreaView style={styles.container}>
@@ -25,8 +28,8 @@ const OrderComment = observer(function OrderComment() {
 
             <TextInput
                 autoFocus
-                value={orderComment}
-                onChangeText={setOrderComment}
+                value={comment}
+                onChangeText={setComment}
                 multiline
                 style={{ height: 200 }}
                 contentStyle={{ backgroundColor: '#F7F7F7' }}
@@ -43,9 +46,10 @@ const OrderComment = observer(function OrderComment() {
                     <Button
                         mode="contained"
                         buttonColor="#EB786E"
+                        onPress={() => setOrderComment(comment)}
                     >
                         <Text style={styles.buttonTitle}>
-                            Готово
+                            Сохранить
                         </Text>
                     </Button>
                 </Link>
