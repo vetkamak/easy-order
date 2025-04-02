@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Appbar, Button, Divider, RadioButton } from 'react-native-paper';
 import { Link } from 'expo-router';
@@ -20,10 +20,10 @@ const CardCell = observer(function CardCell(card: Card) {
         <View style={styles.cell}>
             <Text style={styles.card}>{`Картой ${getCardNumberHidden(card)}`}</Text>
             <RadioButton
-                value={card}
+                value={card.number}
                 status={card.isSelected ? 'checked' : 'unchecked'}
                 color="#EB786E"
-                uncheckedColor="blue"
+                uncheckedColor="#A5A5A5"
                 onPress={onSelect}
             />
         </View>
@@ -41,13 +41,18 @@ const CardSelect = observer(function CardsSelect() {
                         <Text style={styles.appbarTitle}>Оплата</Text>
                     )}
                 />
+                {Platform.OS === 'android' ? (
+                    <Link href="../" asChild>
+                        <Appbar.Action icon="close" color="#404040" />
+                    </Link>
+                ) : null}
             </Appbar.Header>
 
             <FlatList
                 data={cards}
                 renderItem={({ item }) => <CardCell {...item} />}
                 keyExtractor={item => item.id}
-                ItemSeparatorComponent={<Divider style={styles.divider} />}
+                ItemSeparatorComponent={() => <Divider style={styles.divider} />}
                 ListFooterComponent={() => (
                     <View style={styles.buttonContainer}>
                         <Link href={'../'} asChild>

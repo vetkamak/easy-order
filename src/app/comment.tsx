@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Appbar, TextInput, Button } from 'react-native-paper';
 import { Link } from 'expo-router';
@@ -24,6 +24,11 @@ const OrderComment = observer(function OrderComment() {
                         </View>
                     )}
                 />
+                {Platform.OS === 'android' ? (
+                    <Link href="../" asChild>
+                        <Appbar.Action icon="close" color="#404040" />
+                    </Link>
+                ) : null}
             </Appbar.Header>
 
             <TextInput

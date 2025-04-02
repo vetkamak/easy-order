@@ -18,10 +18,10 @@ export const AddressCell = observer(function AddressCell(address: Address) {
     return (
         <View style={styles.cell}>
             <RadioButton
-                value={address}
+                value={`${address.city}, ${address.address}`}
                 status={address.isSelected ? 'checked' : 'unchecked'}
                 color="#EB786E"
-                uncheckedColor="blue"
+                uncheckedColor="#A5A5A5"
                 onPress={onSelect}
             />
             <View style={styles.addressContainer}>

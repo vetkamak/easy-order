@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ActivityIndicator, Appbar, Button, Dialog, Divider, Icon, Switch } from 'react-native-paper';
 import { Link } from 'expo-router';
@@ -137,6 +137,11 @@ const OrderCart = observer(function OrderCart() {
                         <Text style={styles.appbarTitle}>{currentAddress?.address || ''}</Text>
                     )}
                 />
+                {Platform.OS === 'android' ? (
+                    <Link href="../" asChild>
+                        <Appbar.Action icon="close" color="#404040" />
+                    </Link>
+                ) : null}
             </Appbar.Header>
 
             <FlatList

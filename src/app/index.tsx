@@ -84,7 +84,7 @@ const ProductFeed = observer(function Index() {
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
                 onEndReached={onRefreshProducts}
-                onEndReachedThreshold={0.3}
+                onEndReachedThreshold={0.5}
             />
 
             <Link href="/orderStatusModal" asChild>

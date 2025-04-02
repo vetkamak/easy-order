@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
-        height: 44,
-        marginBottom: 16,
+        height: 56,
+        marginBottom: 8,
     },
     name: {
         fontSize: 12,

@@ -1,7 +1,7 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Appbar, Divider } from 'react-native-paper';
-
+import { Link } from 'expo-router';
 import { observer} from 'mobx-react-lite';
 
 import { orderService } from '@/src/services/OrderService';
@@ -70,13 +70,18 @@ const OrderStatus = observer(function OrderStatus() {
                         </View>
                     )}
                 />
+                {Platform.OS === 'android' ? (
+                    <Link href="../" asChild>
+                        <Appbar.Action icon="close" color="#404040" />
+                    </Link>
+                ) : null}
             </Appbar.Header>
 
             <FlatList
                 data={createdOrderProducts}
                 renderItem={({ item }) => <OrderCell {...item} />}
                 keyExtractor={keyExtractor}
-                ItemSeparatorComponent={<Divider style={styles.divider} />}
+                ItemSeparatorComponent={() => <Divider style={styles.divider} />}
                 ListHeaderComponent={ListHeaderComponent}
                 ListFooterComponent={ListFooterComponent}
                 showsVerticalScrollIndicator={false}

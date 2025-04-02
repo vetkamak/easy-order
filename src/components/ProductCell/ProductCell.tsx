@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
     },
     textContainer: {
-        height: 44,
+        height: 56,
         marginVertical: 8,
     },
     name: {

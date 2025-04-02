@@ -26,7 +26,7 @@ export const AddressSelect = observer(function AddressSelect({ visible, onDismis
                     data={addresses}
                     renderItem={({ item }) => <AddressCell {...item} />}
                     keyExtractor={item => item.id}
-                    ItemSeparatorComponent={<Divider />}
+                    ItemSeparatorComponent={() => <Divider />}
                     ListHeaderComponent={() => (
                         <Text style={styles.headerTitle}>Выберите адрес</Text>
                     )}
